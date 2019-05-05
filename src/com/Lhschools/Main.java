@@ -40,7 +40,8 @@ public class Main {
          d = keyboard.nextInt();
 
          System.out.println("");
-	 w = 	 
+	 w = Formula(d,m,y);
+	 rhyme = TNR(w);	 
     }
 	public static int Formula (int d, int m, int y) {
         if (m == 1 || m == 2) {
@@ -52,3 +53,33 @@ public class Main {
         int w = (d + (13 * (m + 1) / 5) + e + (e / 4) + (c / 4) + (5 * c)) % 7;
         return w;    
 }
+public static String TNR(int h){
+        String rhyme;
+
+        switch (h) {
+            case 0:
+                rhyme = "are fair of face!";
+                break;
+            case 1:
+                rhyme= "are full of grace!";
+                break;
+            case 2:
+                rhyme = "are full of woe!";
+                break;
+            case 3:
+                rhyme = "have far to go!";
+                break;
+            case 4:
+                rhyme = "are loving and giving!";
+                break;
+            case 5:
+                rhyme = "work hard for a living!";
+                break;
+            case 6:
+                rhyme = "are fair and wise and good in every way!";
+                break;
+            default:
+                rhyme = "error!";
+                break;
+        }
+        return rhyme;
