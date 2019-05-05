@@ -40,5 +40,15 @@ public class Main {
          d = keyboard.nextInt();
 
          System.out.println("");
+	 w = 	 
     }
+	public static int Formula (int d, int m, int y) {
+        if (m == 1 || m == 2) {
+            m += 12;
+            y -= 1;
+        }
+        int e = y % 100;
+        int c = y / 100;
+        int w = (d + (13 * (m + 1) / 5) + e + (e / 4) + (c / 4) + (5 * c)) % 7;
+        return w;    
 }
