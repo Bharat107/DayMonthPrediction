@@ -26,5 +26,19 @@ public class Main {
         System.out.println("But the child born on the Sabbath Day,");
         System.out.println("Is fair and wise and good in every way.");
         System.out.println();
+	    
+	 while (loop) {
+         System.out.print("Hello there, based on the date of birth you provide,");
+         System.out.println(" I will tell you what day of the week you were born on and what the poem says about you!");
+         System.out.println("So, what year were you born on?");
+         y = keyboard.nextInt();
+
+         System.out.println("What month of that year were you born on? (in numbers)");
+         m = keyboard.nextInt();
+
+         System.out.println("What day of that month were you born on?");
+         d = keyboard.nextInt();
+
+         System.out.println("");
     }
 }
