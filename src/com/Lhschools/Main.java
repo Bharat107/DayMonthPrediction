@@ -41,7 +41,9 @@ public class Main {
 
          System.out.println("");
 	 w = Formula(d,m,y);
-	 rhyme = TNR(w);	 
+	 rhyme = TNR(w);
+	 day = DOW(w);
+	 n = 	 
     }
 	public static int Formula (int d, int m, int y) {
         if (m == 1 || m == 2) {
@@ -83,3 +85,26 @@ public static String TNR(int h){
                 break;
         }
         return rhyme;
+}
+    public static String DOW(int w){
+        String day;
+        switch (w) {
+            case 0:day = "Saturday";
+                break;
+            case 1:  day = "Sunday";
+                break;
+            case 2:  day = "Monday";
+                break;
+            case 3:  day = "Tuesday";
+                break;
+            case 4:  day = "Wednesday";
+                break;
+            case 5:  day = "Thursday";
+                break;
+            case 6:  day = "Friday";
+                break;
+            default: day = "error!";
+                break;
+        }
+        return day;
+    }
