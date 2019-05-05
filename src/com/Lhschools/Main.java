@@ -43,7 +43,12 @@ public class Main {
 	 w = Formula(d,m,y);
 	 rhyme = TNR(w);
 	 day = DOW(w);
-	 n = 	 
+	 n = NODIM(m, y);
+	 month = month(m);
+		 
+	 System.out.println("You were born on a " + day + "!");
+	 System.out.println("Also, The Nursery Rhyme says that you " + rhyme);
+	 System.out.println("");	 
     }
 	public static int Formula (int d, int m, int y) {
         if (m == 1 || m == 2) {
@@ -108,3 +113,88 @@ public static String TNR(int h){
         }
         return day;
     }
+public static int NODIM(int m, int year){
+        int n;
+        int leap;
+        leap = year % 400;
+
+        switch(m){
+            case 1 : n = 31;
+                break;
+            case 2 :
+                if (leap == 0) {
+                    n = 29;
+                } else {
+                    n = 28;
+                }
+                break;
+            case 3 : n = 31;
+                break;
+            case 4 : n = 30;
+                break;
+            case 5 : n = 31;
+                break;
+            case 6 : n = 30;
+                break;
+            case 7 : n = 31;
+                break;
+            case 8 : n = 31;
+                break;
+            case 9: n = 30;
+                break;
+            case 10 : n = 31;
+                break;
+            case 11 : n = 30;
+                break;
+            case 12 : n = 31;
+                break;
+            default: n = 0;
+                break;
+        }
+        return n;
+public static String month(int m){
+        String month;
+        switch(m){
+            case 1:
+                month = "January";
+                break;
+            case 2:
+                month = "February";
+                break;
+            case 3:
+                month = "March";
+                break;
+            case 4:
+                month = "April";
+                break;
+            case 5:
+                month = "May";
+                break;
+            case 6:
+                month = "June";
+                break;
+            case 7:
+                month= "July";
+                break;
+            case 8:
+                month = "August";
+                break;
+            case 9:
+                month = "September";
+                break;
+            case 10:
+                month = "October";
+                break;
+            case 11:
+                month = "November";
+                break;
+            case 12:
+                month = "December";
+                break;
+            default:
+                month = "error!";
+        }
+        return month;
+    }
+
+}
