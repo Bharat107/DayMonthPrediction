@@ -1,9 +1,12 @@
 package com.Lhschools;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-	Scanner keyboard;
+	   
+        Scanner keyboard;
         int y;
         int w;
         int m;
@@ -26,31 +29,33 @@ public class Main {
         System.out.println("But the child born on the Sabbath Day,");
         System.out.println("Is fair and wise and good in every way.");
         System.out.println();
-	    
-	 while (loop) {
-         System.out.print("Hello there, based on the date of birth you provide,");
-         System.out.println(" I will tell you what day of the week you were born on and what the poem says about you!");
-         System.out.println("So, what year were you born on?");
-         y = keyboard.nextInt();
 
-         System.out.println("What month of that year were you born on? (in numbers)");
-         m = keyboard.nextInt();
+        while (loop) {
+            System.out.print("Hello there, based on the date of birth you provide,");
+            System.out.println(" I will tell you what day of the week you were born on and what the poem says about you!");
+            System.out.println("So, what year were you born on?");
+            y = keyboard.nextInt();
 
-         System.out.println("What day of that month were you born on?");
-         d = keyboard.nextInt();
+            System.out.println("What month of that year were you born on? (in numbers)");
+            m = keyboard.nextInt();
 
-         System.out.println("");
-	 w = Formula(d,m,y);
-	 rhyme = TNR(w);
-	 day = DOW(w);
-	 n = NODIM(m, y);
-	 month = month(m);
-		 
-	 System.out.println("You were born on a " + day + "!");
-	 System.out.println("Also, The Nursery Rhyme says that you " + rhyme);
-	 System.out.println("");	 
+            System.out.println("What day of that month were you born on?");
+            d = keyboard.nextInt();
+
+            System.out.println("");
+            w = Formula(d,m,y);
+            rhyme = TNR(w);
+            day = DOW(w);
+            n = NODIM(m, y);
+            month = month(m);
+
+            System.out.println("You were born on a " + day + "!");
+            System.out.println("Also, The Nursery Rhyme says that you " + rhyme);
+            System.out.println("");
+        }
+
     }
-	public static int Formula (int d, int m, int y) {
+    public static int Formula (int d, int m, int y) {
         if (m == 1 || m == 2) {
             m += 12;
             y -= 1;
@@ -58,9 +63,9 @@ public class Main {
         int e = y % 100;
         int c = y / 100;
         int w = (d + (13 * (m + 1) / 5) + e + (e / 4) + (c / 4) + (5 * c)) % 7;
-        return w;    
-}
-public static String TNR(int h){
+        return w;
+    }
+    public static String TNR(int h){
         String rhyme;
 
         switch (h) {
@@ -90,7 +95,7 @@ public static String TNR(int h){
                 break;
         }
         return rhyme;
-}
+    }
     public static String DOW(int w){
         String day;
         switch (w) {
@@ -113,7 +118,7 @@ public static String TNR(int h){
         }
         return day;
     }
-public static int NODIM(int m, int year){
+    public static int NODIM(int m, int year){
         int n;
         int leap;
         leap = year % 400;
@@ -152,7 +157,8 @@ public static int NODIM(int m, int year){
                 break;
         }
         return n;
-public static String month(int m){
+    }
+    public static String month(int m){
         String month;
         switch(m){
             case 1:
